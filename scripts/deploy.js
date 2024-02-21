@@ -9,13 +9,12 @@ const hre = require("hardhat");
 async function main() {
   const [deployer] = await ethers.getSigners();
 
-  const voters = await ethers.getContractFactory("Voters");
-  const res = await voters.deploy();
-  // const lock = await ethers.deployContract("Voters");
-
-  // await lock.waitForDeployment();
+  // const voters = await ethers.getContractFactory("Voters");
+  // const res = voters.deploy();
+  const voters = await ethers.deployContract("Voters");
+  await voters.waitForDeployment();
   console.log(
-    `Deployer: ${deployer.address} Contract: ${res.address}`
+    `Deployer: ${deployer.address} Contract: ${voters.address}`
   );
 }
 

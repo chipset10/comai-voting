@@ -6,7 +6,7 @@ contract Voters {
   
   struct User{
     uint id;
-    string aadhar;
+    string communityID;
     string name;
     string email;
     bytes32 pass;
@@ -224,11 +224,11 @@ contract Voters {
     }
   }
 
-  function loginUser(string memory pass,string memory aadhar) external view returns (bool){
+  function loginUser(string memory pass,string memory communityID) external view returns (bool){
     require(isUserRegistered());
     User memory tmp=userlist[UserToId[getSender()]];
     bytes32 chkHash=keccak256(abi.encode(pass));
-    if(tmp.pass==chkHash && (keccak256(abi.encodePacked(tmp.aadhar)) == keccak256(abi.encodePacked(aadhar)))){
+    if(tmp.pass==chkHash && (keccak256(abi.encodePacked(tmp.communityID)) == keccak256(abi.encodePacked(communityID)))){
       return true;
     }
     else{
@@ -254,13 +254,13 @@ contract Voters {
     return keccak256(abi.encode(_string1));
   }
   
-  function addUser(string memory aadhar,string memory name,string memory email,string memory pass,string memory cid,string memory key,bool isValidated) external{
+  function addUser(string memory communityID,string memory name,string memory email,string memory pass,string memory cid,string memory key,bool isValidated) external{
     require(!isUserRegistered(),"Already Registered!");
     uint userID=userlist.length;
     bytes32 hsh=collisionHash(pass);
     UserToId[getSender()]=userID;
     UserRole[userID]=false;
-    userlist.push(User(userID,aadhar,name,email,hsh,cid,key,isValidated));
+    userlist.push(User(userID,communityID,name,email,hsh,cid,key,isValidated));
     userExists[getSender()]=true;
   }
 
