@@ -32,14 +32,14 @@ const App = () => {
         if(window.ethereum){
             const provider=new ethers.providers.Web3Provider(ethereum)
             const signer=provider.getSigner()
-            const UserContract=new ethers.Contract(
+            const VotingContract=new ethers.Contract(
                 ContractAddress,
                 UserABI.abi,
                 signer
             )          
-            await UserContract.getUserDetails().then(async (dat)=>{
+            await VotingContract.getUserDetails().then(async (dat)=>{
                 setUser(dat)
-                user!=null && await UserContract.getUserRole(user.id).then((res)=>{
+                user!=null && await VotingContract.getUserRole(user.id).then((res)=>{
                     setRole(res)
                 })
             })
