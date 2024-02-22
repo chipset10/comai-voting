@@ -361,6 +361,11 @@ contract CommuneVoting {
 
   event getWinners(Candidate[] res);
   
+  function setTieWinner(uint proposalID, Candidate memory candidate) public {
+    candidate.voteCount++;
+    proposalWinner[proposalID] = candidate;
+    winnerMapped[proposalID] = true;
+  }
 
   function getWinner(uint proposalID) public view returns(Candidate memory) {
     if (winnerMapped[proposalID]) {

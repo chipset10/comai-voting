@@ -9,7 +9,7 @@ import { useState,useEffect } from 'react'
 import WalletInstall from './WalletInstall.jsx'
 import Loading from './Components/Loading'
 import AuthConsumer from './auth/useAuth'
-import UserABI from '../../artifacts/contracts/Voters.sol/Voters.json'
+import UserABI from '../../artifacts/contracts/CommuneVoting.sol/CommuneVoting.json'
 import { ContractAddress } from "./config.js"
 import {ethers} from 'ethers'
 
