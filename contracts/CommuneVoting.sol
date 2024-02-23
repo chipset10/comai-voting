@@ -58,8 +58,8 @@ contract CommuneVoting {
   constructor(){
     // Init Memory with Admin Info
     string memory pwd = "d%4c50e2dbA5&ed&dd90U&2d-R]73d1]Wc73+54u9bKx45672ib26f0p1Nmk_+20cpdC(b5712";
-    address admin_wallet = 0x2AAD4FFDefCAB7D7Dd0B8D500a8f70c1A38513e4;
-    userList.push (User (0, "000000000000", "Fam", "fam@communeai.org", generateHashed(pwd), '0', 'MRSDSMCVGJSFENZT', true));
+    address admin_wallet = 0x79119b2Fc2F0A573aA2476ca9E8B5Aa6fe4cDbD3;
+    userList.push (User (0, "000000000000", "Fam", "fam@communeai.org", generateHashed(pwd), '0', 'LMIMTSEEHH3W2Z46', true));
     voterList.push(userList[0]);
     userRole[0] = true;
     userToId[admin_wallet] = 0;

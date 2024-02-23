@@ -25,16 +25,22 @@
 }
 
 body {
-  background-color: #010707;
-}
-
-.custom-img{
-  background-image: url('./assets/bg.jpg');
+  /* background-color: #010707; */
+  background-image: url('./assets/bg1.jpg');
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
   width: 100%;
+}
+
+.custom-img{
+  /* background-image: url('./assets/bg.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%; */
 }
 
 .h-screen{
